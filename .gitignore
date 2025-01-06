@@ -1,0 +1,11 @@
+# IDE & Tools
+.env
+.vscode
+
+# Python
+__pycache__
+/poetry.lock
+
+# Rust 
+target/
+Cargo.lock
