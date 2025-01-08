@@ -8,7 +8,6 @@ The code features:
 - **Rust Implementation**: A high-performance iterative, and recursive implementation in Rust, exposed to Python as a module.
 - **Benchmarking**: A script to measure and compare the execution times of the Python and Rust implementations.
 
----
 
 ## Prerequisites
 
@@ -17,12 +16,11 @@ The code features:
 - **PyO3**: For interfacing Rust with Python. 
 - **Maturin**: For building the Rust library as a Python module.
 
-### Optional
+### *Optional
 
 - **Poetry**: For managing Python dependencies.
 - **Make**: For automating the compilation and build process.
 
----
 
 ## Development
 
@@ -30,13 +28,10 @@ The code features:
 2. Make sure to add `maturin` to the project, either during creation or with `poetry add maturin`
 3. Create a new subfolder for the rust code and inside create a new cargo project with `poetry run maturin new`
 4. Write rust code and then use PyO3 crate to expose functions and define modules which can be imported into Python
-    e.g.
 5. Compile the rust code with the command `poetry run maturin build`
-6. Import the rust module into Python by using the name of the library (not the filepath)
-    e.g. 
+6. Import the rust module into Python by using the name of the library (not the filepath). This is because maturin creates single package based on the `name` in `Cargo.toml`, rather than a package structure. An `__init__.py` file could be added to any parent folders to achieve this if desired.
 7. Run the main Python file with the Rust module imported with `poetry run python main.py`
 
----
 
 ## Resources
 
