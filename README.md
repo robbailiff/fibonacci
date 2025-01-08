@@ -27,7 +27,7 @@ The code features:
 1. Create a new folder and initialise python python using `poetry init`
 2. Make sure to add `maturin` to the project, either during creation or with `poetry add maturin`
 3. Create a new subfolder for the rust code and inside create a new cargo project with `poetry run maturin new`
-4. Be sure to include `[lib] crate-type = ["cdylib"]` in `Cargo.toml` to ensure that Cargo produces a C-compatible library that can be loaded by Python. By default, Rust libraries (crate-type = ["rlib"]) are compiled as static libraries for use in other Rust projects, which are not compatible with Python.
+4. Be sure to include `[lib] crate-type = ["cdylib"]` in `Cargo.toml` to ensure that Cargo produces a C-compatible library that can be loaded by Python. By default, a `.rlib` file is created, which is a static file compiled for use in other Rust projects, and is not compatible with Python.
 5. Write rust code and then use PyO3 crate to expose functions and define modules which can be imported into Python
 6. Compile the rust code with the command `poetry run maturin build`
 7. Import the rust module into Python by using the name of the library (not the filepath). This is because maturin creates single package based on the `name` in `Cargo.toml`, rather than a package structure. An `__init__.py` file could be added to any parent folders to achieve this if desired.
