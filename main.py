@@ -22,6 +22,10 @@ functions_to_test = [
 ]
 
 def run():
+    """
+    Run the program by iterating over a list of input functions and display
+    the results in a table sorted by shortest execution duration.
+    """
     args = get_args()
     
     print("Program starting...")
