@@ -1,5 +1,9 @@
+SHELL := /bin/bash
+
 build:
-	bash build.sh
+	@echo "Running maturin in dev mode"
+	cd rust_fibonacci && poetry run maturin develop
 
 build-release:
-	bash build.sh --release
+	@echo "Running maturin in release mode"
+	cd rust_fibonacci && poetry run maturin develop --release
